@@ -29,7 +29,7 @@ Hệ thống bao gồm các thành phần chính:
 
 ## Mục tiêu phát triển
 - Tăng cường độ chính xác và tốc độ nhận diện biển số xe
-- Mở rộng hỗ trợ đa dạng loại phương tiện (ô tô, xe máy, xe đạp điện)
+- Mở rộng hỗ trợ đa dạng loại phương tiện
 - Nâng cao trải nghiệm người dùng với giao diện thân thiện, dễ sử dụng
 - Tích hợp thêm các phương thức thanh.
 - Phát triển tính năng phát hiện biển số không đúng với phương tiện, giúp tránh được tình huống biển số của phương tiện này sử dụng cho phương tiện khác.
