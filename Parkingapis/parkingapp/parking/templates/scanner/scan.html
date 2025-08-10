@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Trạm thu phí</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; font-family: sans-serif; }
+        #preview { width: 300px; margin-top: 1rem; border: 1px solid #ccc; padding: 10px; display: none; }
+        #result { margin-top: 0.8rem; font-size: 1.2rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h2>Quét biển số xe</h2>
+<input type="file" accept="image/*" id="file-input">
+<img id="preview" alt="Preview ảnh QR">
+<button id="submit">gửi ảnh</button>
+<div id="result"></div>
+
+<script>
+    const csrftoken = "{{ csrf_token }}";
+    const apiUrl = "http://127.0.0.1:8000/scan-plate/";
+    const resultEl = document.getElementById("result");
+    let selectedFile = null;
+
+    document.getElementById("file-input").addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        selectedFile = file
+
+        const imgURL = URL.createObjectURL(file);
+        const previewEl = document.getElementById("preview");
+        previewEl.src = imgURL;
+        previewEl.style.display = "block";
+     });
+
+
+    document.getElementById("submit").addEventListener("click", function() {
+        if (!selectedFile) {
+            resultEl.textContent = "Vui lòng chọn một ảnh trước.";
+            resultEl.style.color = "red";
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("image", selectedFile);
+
+        fetch(apiUrl, {
+            method:"POST",
+            credentials: "same-origin",
+            headers:{"X-CSRFToken": csrftoken },
+            body: formData
+        })
+        .then(r=>r.json())
+        .then(data => {
+            if(data.ok){
+                resultEl.textContent = "Biển số: " + data.plate_text;
+                resultEl.style.color = "green";
+            }else{
+                resultEl.textContent = "Lỗi: " + data.error;
+                resultEl.style.color = "red";
+            }
+        })
+        .catch(error => {
+            resultEl.textContent = "Lỗi: " + error;
+            resultEl.style.color = "red";
+        });
+    });
+</script>
+</body>
+</html>
