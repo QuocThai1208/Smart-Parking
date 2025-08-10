@@ -8,24 +8,24 @@ Mục tiêu của hệ thống là tự động hóa toàn bộ quay trình gử
 
 ## Kiến trúc hệ thống
 Hệ thống bao gồm các thành phần chính:
-    -Model nhận diện biển số xe: Sử dụng mô hình YOLOv8 để phát hiện và nhận diện biển số khi phương tiện đi vào hoặc ra khỏi bãi.
-    -Backend: Xây dựng trên Django , cung cấp API RESTful để quản lý dữ liệu và xử lý thanh toán.
-    -Cơ sở dữ liệu: Dùng MySQL để lưu dữ liệu của hệ thống.
-    -Ứng dụng di động: Sử dụng React Native để xây dựng ứng dụng di động, cung cấp giao diện xe người dùng/quản lý xem nhật ký gửi xe, thông tin ví, xem danh sách phương tiện, xem bảng giá giữ xe, nhật ký giao dịch, xem báo cáo thống kê (dành cho quản lý).
+    - Model nhận diện biển số xe: Sử dụng mô hình YOLOv8 để phát hiện và nhận diện biển số khi phương tiện đi vào hoặc ra khỏi bãi.
+    - Backend: Xây dựng trên Django , cung cấp API RESTful để quản lý dữ liệu và xử lý thanh toán.
+    - Cơ sở dữ liệu: Dùng MySQL để lưu dữ liệu của hệ thống.
+    - Ứng dụng di động: Sử dụng React Native để xây dựng ứng dụng di động, cung cấp giao diện xe người dùng/quản lý xem nhật ký gửi xe, thông tin ví, xem danh sách phương tiện, xem bảng giá giữ xe, nhật ký giao dịch, xem báo cáo thống kê (dành cho quản lý).
 
 ## Tính năng nổi bật
-  -*Nhận diện biển số xe tự động*: Dùng YOLOv8 để nhận diện và đọc ký tự biển số tự động khi xe vào/ra ở bãi, qua đó xác định được biển số xe nhanh chống giảm sự can thiệp của con người.
-  -*Quản lý lượt gửi xe*: Hệ thống lưu lại lượt gửi xe của người dùng, thời gian ra/vào , tính phí chính xác dựa trên thời gian gửi xe.
-  -*Phân loại phương tiện*: Dùng YOLOv8 để phân loại phương tiện khi người dùng đăng ký phượng tiện, nhằm tăng tính chính xác để áp dụng phí trên các phương tiện.
-  -*Thanh toán tự động*: Thanh toán tự động thông qua ví thanh toán khi người dùng lấy.
-  -Và các chức năng cơ bản khác.
+  - *Nhận diện biển số xe tự động*: Dùng YOLOv8 để nhận diện và đọc ký tự biển số tự động khi xe vào/ra ở bãi, qua đó xác định được biển số xe nhanh chống giảm sự can thiệp của con người.
+  - *Quản lý lượt gửi xe*: Hệ thống lưu lại lượt gửi xe của người dùng, thời gian ra/vào , tính phí chính xác dựa trên thời gian gửi xe.
+  - *Phân loại phương tiện*: Dùng YOLOv8 để phân loại phương tiện khi người dùng đăng ký phượng tiện, nhằm tăng tính chính xác để áp dụng phí trên các phương tiện.
+  - *Thanh toán tự động*: Thanh toán tự động thông qua ví thanh toán khi người dùng lấy.
+  - Và các chức năng cơ bản khác.
 
 ## Công nghệ sử dụng
--Chứng thực người dùng: Oauth2.
--Cơ sở dữ liệu: MySQL.
--Backend: Django.
--Frontend: React Native.
--Mô hình nhận diện: YOLOv8
+- Chứng thực người dùng: Oauth2.
+- Cơ sở dữ liệu: MySQL.
+- Backend: Django.
+- Frontend: React Native.
+- Mô hình nhận diện: YOLOv8
 
 ## Mục tiêu phát triển
 - Tăng cường độ chính xác và tốc độ nhận diện biển số xe
