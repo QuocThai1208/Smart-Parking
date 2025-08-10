@@ -8,10 +8,10 @@ Mục tiêu của hệ thống là tự động hóa toàn bộ quay trình gử
 
 ## Kiến trúc hệ thống
 Hệ thống bao gồm các thành phần chính:
-    - Model nhận diện biển số xe: Sử dụng mô hình YOLOv8 để phát hiện và nhận diện biển số khi phương tiện đi vào hoặc ra khỏi bãi.
-    - Backend: Xây dựng trên Django , cung cấp API RESTful để quản lý dữ liệu và xử lý thanh toán.
-    - Cơ sở dữ liệu: Dùng MySQL để lưu dữ liệu của hệ thống.
-    - Ứng dụng di động: Sử dụng React Native để xây dựng ứng dụng di động, cung cấp giao diện xe người dùng/quản lý xem nhật ký gửi xe, thông tin ví, xem danh sách phương tiện, xem bảng giá giữ xe, nhật ký giao dịch, xem báo cáo thống kê (dành cho quản lý).
+- Model nhận diện biển số xe: Sử dụng mô hình YOLOv8 để phát hiện và nhận diện biển số khi phương tiện đi vào hoặc ra khỏi bãi.
+- Backend: Xây dựng trên Django , cung cấp API RESTful để quản lý dữ liệu và xử lý thanh toán.
+- Cơ sở dữ liệu: Dùng MySQL để lưu dữ liệu của hệ thống.
+- Ứng dụng di động: Sử dụng React Native để xây dựng ứng dụng di động, cung cấp giao diện xe người dùng/quản lý xem nhật ký gửi xe, thông tin ví, xem danh sách phương tiện, xem bảng giá giữ xe, nhật ký giao dịch, xem báo cáo thống kê (dành cho quản lý).
 
 ## Tính năng nổi bật
   - *Nhận diện biển số xe tự động*: Dùng YOLOv8 để nhận diện và đọc ký tự biển số tự động khi xe vào/ra ở bãi, qua đó xác định được biển số xe nhanh chống giảm sự can thiệp của con người.
